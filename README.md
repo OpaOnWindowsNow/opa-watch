@@ -2,14 +2,15 @@ opa-dynamic
 ===========
 
 ## What is *opa-dynamic* ?
-*opa-dynamic* provides a project based 'verify & launch loop'. This make developpement with Opa even more fun and more productive.
+*opa-dynamic* provides a project-based 'verify & launch loop' for Opa. 
+This makes developpement with Opa even more fun and more productive.
 
-Any time you do a modification on your project, your project is verified by *Opa* compiler (syntax, semantics, client/server distribution ...) and launched.
-*opa-dynamic* is editor independant so it will work even in most environment.
+Each time you do a modification on your project, your project isautomatically verified by the *Opa* compiler (syntax, semantics, client/server distribution ...) and launched.
+*opa-dynamic* is editor-independant so it will work in any environment.
 
 
 ## Is my project supported ?
-It should work off-the-shelf with project created by opa-create or containing an `opa.conf` or a `Makefile` files.
+It should work off-the-shelf with any project created by opa-create or containing an `opa.conf` or a `Makefile` files.
 It can be easily customized to work with most projects.
 
 
@@ -17,6 +18,7 @@ It can be easily customized to work with most projects.
 Assuming your project is compatible with *opa-dynamic*, in a terminal, start *opa-dynamic*:
 
 `opa-dynamic --src-dir path/opa_project`
+Or just without argument when launched in the current directory.
 
 You will be notifed of compilation error if any.
 On the terminal you should have a message:
@@ -28,7 +30,7 @@ And you should have in your notification area the following message:
 >Launched : opa_project
 
 
-Edit any opa file inside, like the code for your project home page page.
+Edit any opa file inside, like the code for your project home page.
 The previous two message appears again, indicating that the modification has been processed.
 You can see the result immediatly using your browser. (`firefox localhost:2001`)
 
@@ -85,10 +87,13 @@ For instance if your project is in classic syntax:
 The current directory will be use if `--src-dir` is omitted.
 
 ## Are Mac and Windows supported ?
-*opa-dynamic* should work but the notification feature is not working.
+*opa-dynamic* should work but the notification feature is not working yet. 
 
 ## Can notification appeared in my favorite text editor ?
 We plan to support notification in emacs and Sublime Text, and to provide a simple way to have it on other editor.
 
 ## Can I make opa-dynamic better ?
 Yes you are welcomed for any contributions, bug fixes, doc fixes and new features.
+
+## What is the license?
+opa-dynamic is released under the MIT license.
