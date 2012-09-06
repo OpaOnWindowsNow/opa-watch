@@ -1,0 +1,9 @@
+Features
+
+* Auto[re]load browser tab (using xdotool on linux or event callback on server down)
+* Link error position in emacs and sublime
+
+Fixes
+
+* Monitor new files and new directories
+
