@@ -78,7 +78,7 @@ The last command is assumed to be the launch command and its termination is not 
 For instance:
 `opa-dynamic --src-dir path/opa_project --command "build_command" --command "killall launch.exe" --comand "launch.exe"`
 
-## How to use specific opa options without specifying --command in details ?
+## How to use specific opa options without specifying `--command` ?
 You can use `--opa-opt`.
 For instance if your project is in classic syntax:
 `opa-dynamic --src-dir path/opa_project --opa-opt "--parser classic"`
@@ -96,4 +96,4 @@ We plan to support notification in emacs and Sublime Text, and to provide a simp
 Yes you are welcomed for any contributions, bug fixes, doc fixes and new features.
 
 ## What is the license?
-opa-dynamic is released under the MIT license.
+*opa-dynamic* is released under the MIT license.
