@@ -218,7 +218,10 @@ Autocommand(config) = {{
   target= "dynamic.exe"
   kill_id = Random.string(16) // Workaround
   Conf = {{
-    commands = ["opa {config.opa_opt} --opx-dir _build --conf opa.conf --conf-opa-files -o {target}"] ++ if config.launch then ["cp ./{target} ./{kill_id}_{target} && ./{kill_id}_{target} -p 2001"] else []
+    commands = ["opa {config.opa_opt} --opx-dir _build --conf *.conf --conf-opa-files -o {target}"] ++ if config.launch then ["cp ./{target} ./{kill_id}_{target} && ./{kill_id}_{target} -p 2001"] else []
+  }}
+  Opack = {{
+    commands = ["opa {config.opa_opt} *.opack -o {target}"] ++ if config.launch then ["cp ./{target} ./{kill_id}_{target} && ./{kill_id}_{target} -p 2001"] else []
   }}
   Makefile = {{
     commands = ["make", ] ++ if config.launch then  ["make run"] else []
@@ -254,14 +257,17 @@ main(config)=
   }
   // Standard Opa project detection
   has_file(file) =  StringSet.mem(String.concat("/",[config.directory,file]), set)
-  has_conf = has_file("opa.conf")
+  has_ext_file(ext) = StringSet.exists(String.has_suffix(ext,_),set)
+  has_opack = has_ext_file(".opack")
+  has_conf = has_ext_file(".conf")
   has_makefile = has_file("Makefile")
   commands() = (
      if config.command!=[] then config.command else
+     if has_opack          then Autocommand.Opack.commands else
      if has_conf           then Autocommand.Conf.commands else
      if has_makefile       then Autocommand.Makefile.commands else []
   )
-  do if commands()==[] then error("Don't know what to do please specify --command or create opa.conf or create a Makefile")
+  do if commands()==[] then error("Don't know what to do please specify --command or create a .conf or .opack or Makefile file")
   command() =
     do print("Change detected: ")
     commands = commands()
