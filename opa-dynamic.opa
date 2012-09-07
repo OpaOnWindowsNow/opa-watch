@@ -8,6 +8,7 @@ import stdlib.system
 
 do Scheduler.sleep(1, -> main(CommandLine.filter(CommandLineConf)) ) // Workaround
 
+
 @expand
 debug = #<Ifstatic:DEBUG> s -> println("[DEBUG] {s}") #<Else> _ -> void #<End>
 
@@ -172,6 +173,7 @@ job_on_files_changes(avoid_file,files,_name,command)=
   do StringSet.iter(add_file,files)
   command()
 
+only_directories = true
 
 /** Collect recusively all path in a directory using an avoidance rule */
 collect_files(avoid_file, rpath,dir) =
