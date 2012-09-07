@@ -5,7 +5,7 @@ opa-dynamic
 *opa-dynamic* provides a project-based 'verify & launch loop' for Opa. 
 This makes developpement with Opa even more fun and more productive.
 
-Each time you do a modification on your project, your project isautomatically verified by the *Opa* compiler (syntax, semantics, client/server distribution ...) and launched.
+Each time you do a modification on your project, your project is automatically verified by the *Opa* compiler (syntax, semantics, client/server distribution ...) and launched.
 *opa-dynamic* is editor-independant so it will work in any environment.
 
 
