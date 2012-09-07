@@ -152,6 +152,7 @@ job_on_files_changes(avoid_file,files,_name,command)=
   add_file(file) =
     do debug("Listen {file} ")
     is_directory = File.is_directory(file)
+    if not(is_directory) then void else
     handler = File.onchange(file,none){file1, event ->
       do  debug("EVENT[{file} {file1}] = {Debug.dump(event)}")
       match event
@@ -167,8 +168,10 @@ job_on_files_changes(avoid_file,files,_name,command)=
       StringMap.add(file, handler, map)
     }
     debug("OK")
-    do StringSet.iter(add_file,files)
-    command()
+
+  do StringSet.iter(add_file,files)
+  command()
+
 
 /** Collect recusively all path in a directory using an avoidance rule */
 collect_files(avoid_file, rpath,dir) =
