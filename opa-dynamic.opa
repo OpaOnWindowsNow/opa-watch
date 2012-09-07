@@ -233,7 +233,8 @@ Autocommand(config) = {{
 
 main(config)=
   // Notifier
-  notify_title = "{simplified_dir(config.directory)}"
+  simplified_name = simplified_dir(config.directory)
+  notify_title = "{simplified_name}"
   notify_title_error = "FAILURE : {notify_title}"
   notify_title_fine = "Launched : {notify_title}"
   notify = notify(config.notifier)
