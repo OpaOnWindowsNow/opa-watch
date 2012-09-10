@@ -6,4 +6,5 @@ Features
 Fixes
 
 * Monitor new files and new directories
+* More robust detection of generated files
 
