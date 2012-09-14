@@ -1,0 +1,8 @@
+--conf opa-dynamic.conf
+--conf-opa-files
+
+--parser classic
+--no-server
+
+--minimal-version 3355
+--opx-dir _build
