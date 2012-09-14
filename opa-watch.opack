@@ -1,4 +1,4 @@
---conf opa-dynamic.conf
+--conf opa-watch.conf
 --conf-opa-files
 
 --parser classic

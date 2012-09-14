@@ -1,4 +1,4 @@
-/** opa-dynamic
+/** opa-watch
   * Monitor a directory conataining a project, recompiles it and relaunch it when needed
   */
 
